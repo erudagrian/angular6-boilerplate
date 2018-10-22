@@ -15,6 +15,20 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "paths": {
+      "yn-components": [
+        "dist/yn-components"
+      ],
+      "yn-components/*": [
+        "dist/yn-components/*"
+      ],
+      "yn-material": [
+        "dist/yn-material"
+      ],
+      "yn-material/*": [
+        "dist/yn-material/*"
+      ]
+    }
   }
 }
