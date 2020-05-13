@@ -5,11 +5,13 @@
     "module": "commonjs",
     "types": []
   },
-  "exclude": [
-    "src/test.ts",
-    "**/*.spec.ts"
-  ],
   "angularCompilerOptions": {
     "entryModule": "src/app/app.server.module#AppServerModule"
-  }
+  },
+  "files": [
+    "src/main.server.ts"
+  ],
+  "include": [
+    "projects/ynwebsite/src/**/*.d.ts"
+  ]
 }
