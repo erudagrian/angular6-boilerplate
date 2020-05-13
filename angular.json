@@ -10,31 +10,32 @@
       "prefix": "app",
       "schematics": {
         "@schematics/angular:class": {
-          "spec": false
+          "skipTests": true
         },
         "@schematics/angular:component": {
-          "spec": false
+          "skipTests": true
         },
         "@schematics/angular:directive": {
-          "spec": false
+          "skipTests": true
         },
         "@schematics/angular:guard": {
-          "spec": false
+          "skipTests": true
         },
         "@schematics/angular:module": {
-          "spec": false
+          "skipTests": true
         },
         "@schematics/angular:pipe": {
-          "spec": false
+          "skipTests": true
         },
         "@schematics/angular:service": {
-          "spec": false
+          "skipTests": true
         }
       },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "aot": true,
             "outputPath": "dist/yn-monorepo",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -54,6 +55,12 @@
           },
           "configurations": {
             "production": {
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
@@ -160,7 +167,8 @@
           "configurations": {
             "production": {
               "project": "projects/yn-components/ng-package.prod.json"
-            }
+            ,              "tsConfig": "projects/yn-components/tsconfig.lib.prod.json"
+}
           }
         },
         "test": {
@@ -195,6 +203,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "aot": true,
             "outputPath": "dist/ynwebsite",
             "index": "projects/ynwebsite/src/index.html",
             "main": "projects/ynwebsite/src/main.ts",
@@ -215,6 +224,12 @@
           },
           "configurations": {
             "production": {
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
               "fileReplacements": [
                 {
                   "replace": "projects/ynwebsite/src/environments/environment.ts",
@@ -333,7 +348,12 @@
             "tsConfig": "projects/yn-material/tsconfig.lib.json",
             "project": "projects/yn-material/ng-package.json"
           }
-        },
+        ,          "configurations": {
+            "production": {
+              "tsConfig": "projects/yn-material/tsconfig.lib.prod.json"
+            }
+          }
+},
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
