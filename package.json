@@ -31,12 +31,12 @@
     "@nguniversal/module-map-ngfactory-loader": "^8.2.6",
     "core-js": "^2.6.11",
     "rxjs": "^6.5.5",
-    "ts-loader": "^5.2.2",
+    "ts-loader": "^9.4.2",
     "tslib": "^1.12.0",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.901.5",
+    "@angular-devkit/build-angular": "~15.0.4",
     "@angular-devkit/build-ng-packagr": "~0.901.5",
     "@angular-devkit/core": "^9.1.5",
     "@angular/cli": "^9.1.5",
@@ -59,7 +59,7 @@
     "ts-node": "~7.0.1",
     "tslint": "~5.11.0",
     "typescript": "^3.8.3",
-    "webpack": "^4.43.0",
+    "webpack": "^5.75.0",
     "webpack-dev-server": "^3.11.0"
   }
 }
